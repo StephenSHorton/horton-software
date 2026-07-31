@@ -4,7 +4,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* RGBeast / Chrome Reference Drop tokens */
+/*
+  Horton Software brand = cool blue you liked.
+  RGBeast / Chrome Ref Drop = stage language only (grid, orbs, glass, lightbar),
+  with orange kept as a secondary accent — not the primary brand color.
+*/
 @theme inline {
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);
@@ -46,20 +50,28 @@
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-ring: var(--sidebar-ring);
+	--color-brand: var(--brand);
+	--color-brand-bright: var(--brand-bright);
+	--color-brand-deep: var(--brand-deep);
 	--color-orange: var(--orange);
 	--color-orange-bright: var(--orange-bright);
-	--color-orange-dim: var(--orange-dim);
-	--color-blender-blue: var(--blender-blue);
 }
 
 :root,
 .dark {
 	--radius: 0.875rem;
-	/* Chrome Ref Drop / RGBeast palette */
+
+	/* Brand blue (original Horton pick) */
+	--brand: oklch(0.72 0.14 250);
+	--brand-bright: oklch(0.8 0.12 245);
+	--brand-deep: oklch(0.45 0.14 255);
+	--brand-soft: #5b9fd4;
+	--blender-blue: #265787;
+
+	/* RGBeast secondary accent only */
 	--orange: #ea7600;
 	--orange-bright: #ff8f1f;
 	--orange-dim: #c46200;
-	--blender-blue: #265787;
 	--green: #3dd68c;
 
 	--background: oklch(0.11 0.015 255);
@@ -68,9 +80,10 @@
 	--card-foreground: oklch(0.97 0.01 250);
 	--popover: oklch(0.14 0.03 255 / 92%);
 	--popover-foreground: oklch(0.97 0.01 250);
-	/* Primary CTA = RGBeast orange */
-	--primary: #ea7600;
-	--primary-foreground: #1a0c00;
+
+	/* Primary CTA = brand blue */
+	--primary: oklch(0.72 0.14 250);
+	--primary-foreground: oklch(0.16 0.03 255);
 	--secondary: oklch(0.2 0.03 255 / 55%);
 	--secondary-foreground: oklch(0.97 0.01 250);
 	--muted: oklch(0.2 0.025 255 / 45%);
@@ -78,22 +91,22 @@
 	--accent: oklch(0.22 0.04 255 / 50%);
 	--accent-foreground: oklch(0.97 0.01 250);
 	--destructive: #ff6b6b;
-	--border: color-mix(in srgb, #ea7600 18%, oklch(1 0 0 / 10%));
+	--border: color-mix(in oklch, var(--brand) 22%, oklch(1 0 0 / 10%));
 	--input: oklch(1 0 0 / 12%);
-	--ring: #ea7600;
-	--chart-1: #ea7600;
-	--chart-2: #3d8fd4;
+	--ring: oklch(0.72 0.14 250);
+	--chart-1: oklch(0.72 0.14 250);
+	--chart-2: #5b9fd4;
 	--chart-3: #265787;
 	--chart-4: #3dd68c;
-	--chart-5: #ff8f1f;
+	--chart-5: #ea7600;
 	--sidebar: oklch(0.13 0.02 255);
 	--sidebar-foreground: oklch(0.97 0.01 250);
-	--sidebar-primary: #ea7600;
-	--sidebar-primary-foreground: #1a0c00;
+	--sidebar-primary: oklch(0.72 0.14 250);
+	--sidebar-primary-foreground: oklch(0.16 0.03 255);
 	--sidebar-accent: oklch(0.2 0.03 255);
 	--sidebar-accent-foreground: oklch(0.97 0.01 250);
 	--sidebar-border: oklch(1 0 0 / 10%);
-	--sidebar-ring: #ea7600;
+	--sidebar-ring: oklch(0.72 0.14 250);
 }
 
 @keyframes smoke-drift {
@@ -139,12 +152,12 @@
 		font-family: var(--font-sans);
 	}
 	::selection {
-		background: color-mix(in srgb, var(--orange) 40%, transparent);
+		background: color-mix(in oklch, var(--brand) 45%, transparent);
 		color: white;
 	}
 }
 
-/* Ambient stage (rgbeast-style) */
+/* Ambient stage (rgbeast structure, blue-led) */
 .fx {
 	pointer-events: none;
 	position: fixed;
@@ -161,8 +174,8 @@
 	position: absolute;
 	inset: 0;
 	background-image:
-		linear-gradient(to right, oklch(0.85 0.06 70 / 8%) 1px, transparent 1px),
-		linear-gradient(to bottom, oklch(0.85 0.06 70 / 8%) 1px, transparent 1px);
+		linear-gradient(to right, oklch(0.75 0.08 250 / 10%) 1px, transparent 1px),
+		linear-gradient(to bottom, oklch(0.75 0.08 250 / 10%) 1px, transparent 1px);
 	background-size: 56px 56px;
 	mask-image: radial-gradient(
 		ellipse 80% 70% at 50% 18%,
@@ -189,27 +202,28 @@
 	filter: blur(64px);
 	opacity: 0.72;
 }
+/* Hero blue bloom — the color you liked */
 .fx-orb-a {
 	top: -6rem;
-	left: 18%;
-	width: 42rem;
-	height: 42rem;
+	left: 12%;
+	width: 46rem;
+	height: 46rem;
 	animation: smoke-drift 18s ease-in-out infinite alternate;
 	background: radial-gradient(
 		circle,
-		color-mix(in srgb, var(--orange) 36%, transparent),
+		oklch(0.55 0.16 255 / 0.45),
 		transparent 68%
 	);
 }
 .fx-orb-b {
-	top: 28%;
+	top: 22%;
 	right: -8%;
-	width: 34rem;
-	height: 34rem;
+	width: 36rem;
+	height: 36rem;
 	animation: smoke-drift 28s ease-in-out infinite alternate-reverse;
 	background: radial-gradient(
 		circle,
-		color-mix(in srgb, var(--blender-blue) 42%, transparent),
+		color-mix(in srgb, var(--brand-soft) 40%, transparent),
 		transparent 70%
 	);
 }
@@ -221,20 +235,21 @@
 	animation: smoke-drift 18s ease-in-out infinite alternate;
 	background: radial-gradient(
 		circle,
-		color-mix(in srgb, #3d7ab5 32%, transparent),
+		color-mix(in srgb, var(--blender-blue) 38%, transparent),
 		transparent 72%
 	);
 }
+/* Small orange accent orb — secondary only */
 .fx-orb-d {
-	top: 55%;
-	left: 42%;
-	width: 22rem;
-	height: 22rem;
-	opacity: 0.45;
+	top: 58%;
+	left: 48%;
+	width: 18rem;
+	height: 18rem;
+	opacity: 0.32;
 	animation: smoke-drift 28s ease-in-out infinite alternate-reverse;
 	background: radial-gradient(
 		circle,
-		color-mix(in srgb, var(--orange-bright) 22%, transparent),
+		color-mix(in srgb, var(--orange) 20%, transparent),
 		transparent 70%
 	);
 }
@@ -250,33 +265,35 @@
 		linear-gradient(to top, var(--background), transparent 12rem);
 }
 
+/* Lightbar: blue-led, thin orange kick like RGBeast */
 .lightbar {
 	height: 2px;
 	background: linear-gradient(
 		90deg,
 		transparent 0%,
-		var(--orange-dim) 12%,
-		var(--orange) 40%,
-		#3d8fd4 72%,
-		var(--blender-blue) 88%,
+		var(--blender-blue) 10%,
+		var(--brand-soft) 32%,
+		var(--brand) 52%,
+		color-mix(in srgb, var(--orange) 70%, var(--brand-soft)) 78%,
+		var(--orange-dim) 90%,
 		transparent 100%
 	);
 	background-size: 200% 100%;
 	animation: lightbar-shimmer 3.5s linear infinite;
 	box-shadow:
-		0 0 10px color-mix(in srgb, var(--orange) 45%, transparent),
-		0 0 22px color-mix(in srgb, var(--blender-blue) 30%, transparent);
+		0 0 12px color-mix(in oklch, var(--brand) 50%, transparent),
+		0 0 22px color-mix(in srgb, var(--blender-blue) 35%, transparent);
 }
 
-/* Glass surfaces */
+/* Glass — blue-tinted */
 .glass {
 	background: linear-gradient(
 		155deg,
-		color-mix(in srgb, var(--orange) 10%, oklch(0.2 0.04 255 / 50%)),
+		color-mix(in oklch, var(--brand) 12%, oklch(0.2 0.04 255 / 50%)),
 		oklch(0.14 0.03 255 / 40%) 55%,
 		oklch(0.12 0.025 255 / 36%)
 	);
-	border: 1px solid color-mix(in srgb, var(--orange) 22%, transparent);
+	border: 1px solid color-mix(in oklch, var(--brand) 28%, transparent);
 	box-shadow:
 		inset 0 1px 0 color-mix(in srgb, white 10%, transparent),
 		0 0 0 1px oklch(0.2 0.04 255 / 28%);
@@ -286,14 +303,14 @@
 .glass-strong {
 	background: linear-gradient(
 		165deg,
-		color-mix(in srgb, var(--orange) 14%, oklch(0.22 0.05 255 / 58%)),
+		color-mix(in oklch, var(--brand) 16%, oklch(0.22 0.05 255 / 58%)),
 		oklch(0.13 0.03 255 / 50%) 60%,
 		oklch(0.11 0.025 255 / 46%)
 	);
-	border: 1px solid color-mix(in srgb, var(--orange) 30%, transparent);
+	border: 1px solid color-mix(in oklch, var(--brand) 35%, transparent);
 	box-shadow:
 		inset 0 1px 0 color-mix(in srgb, white 14%, transparent),
-		0 0 36px color-mix(in srgb, var(--orange) 10%, transparent);
+		0 0 36px color-mix(in oklch, var(--brand) 14%, transparent);
 	backdrop-filter: blur(24px) saturate(165%);
 	-webkit-backdrop-filter: blur(24px) saturate(165%);
 }
@@ -301,15 +318,16 @@
 .text-accent-gradient {
 	background: linear-gradient(
 		115deg,
-		var(--orange-bright) 0%,
-		var(--orange) 45%,
-		#5b9fd4 100%
+		var(--brand-bright) 0%,
+		var(--brand) 42%,
+		var(--brand-soft) 78%,
+		#7eb6e8 100%
 	);
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
 	filter: drop-shadow(
-		0 0 18px color-mix(in srgb, var(--orange) 35%, transparent)
+		0 0 18px color-mix(in oklch, var(--brand) 40%, transparent)
 	);
 }
 
@@ -317,36 +335,34 @@
 	width: 0.4rem;
 	height: 0.4rem;
 	border-radius: 50%;
-	background: var(--orange);
-	box-shadow: 0 0 10px var(--orange);
+	background: var(--brand);
+	box-shadow: 0 0 10px var(--brand);
 	animation: pulse-glow 4s ease-in-out infinite;
 }
 
-/* Primary CTA glow (matches chrome-ref-drop install button energy) */
 .btn-glow {
 	box-shadow:
-		0 0 0 1px color-mix(in srgb, var(--orange) 40%, transparent),
-		0 10px 32px color-mix(in srgb, var(--orange) 32%, transparent),
-		inset 0 1px 0 color-mix(in srgb, white 35%, transparent);
+		0 0 0 1px color-mix(in oklch, var(--brand) 40%, transparent),
+		0 10px 32px color-mix(in oklch, var(--brand) 32%, transparent),
+		inset 0 1px 0 color-mix(in srgb, white 28%, transparent);
 }
 .btn-glow:hover {
 	filter: brightness(1.06);
 	box-shadow:
-		0 0 0 1px color-mix(in srgb, var(--orange) 65%, transparent),
-		0 14px 40px color-mix(in srgb, var(--orange) 42%, transparent),
-		inset 0 1px 0 color-mix(in srgb, white 40%, transparent);
+		0 0 0 1px color-mix(in oklch, var(--brand) 60%, transparent),
+		0 14px 40px color-mix(in oklch, var(--brand) 42%, transparent),
+		inset 0 1px 0 color-mix(in srgb, white 36%, transparent);
 }
 
 .icon-chip {
 	display: flex;
-	size: 2.25rem;
 	width: 2.25rem;
 	height: 2.25rem;
 	align-items: center;
 	justify-content: center;
 	border-radius: 0.75rem;
-	color: var(--orange-bright);
-	background: color-mix(in srgb, var(--orange) 16%, transparent);
-	border: 1px solid color-mix(in srgb, var(--orange) 32%, transparent);
-	box-shadow: 0 0 12px color-mix(in srgb, var(--orange) 18%, transparent);
+	color: var(--brand-bright);
+	background: color-mix(in oklch, var(--brand) 16%, transparent);
+	border: 1px solid color-mix(in oklch, var(--brand) 32%, transparent);
+	box-shadow: 0 0 12px color-mix(in oklch, var(--brand) 18%, transparent);
 }

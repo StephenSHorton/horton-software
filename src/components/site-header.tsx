@@ -20,7 +20,7 @@ export function SiteHeader() {
 					href="#top"
 					className="flex items-center gap-2.5 font-semibold tracking-tight"
 				>
-					<span className="flex size-7 items-center justify-center rounded-lg bg-gradient-to-b from-[#ff8f1f] to-[#ea7600] text-xs font-bold text-primary-foreground shadow-[0_0_16px_color-mix(in_srgb,var(--orange)_45%,transparent)]">
+					<span className="flex size-7 items-center justify-center rounded-lg bg-gradient-to-b from-[oklch(0.8_0.12_245)] to-[oklch(0.55_0.14_255)] text-xs font-bold text-primary-foreground shadow-[0_0_16px_color-mix(in_oklch,var(--brand)_50%,transparent)]">
 						HS
 					</span>
 					<span className="hidden sm:inline">Horton Software</span>

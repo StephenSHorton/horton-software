@@ -36,7 +36,7 @@ export function SiteFooter() {
 						</a>
 					</div>
 				</div>
-				<div className="h-px w-full bg-gradient-to-r from-transparent via-[color-mix(in_srgb,var(--orange)_35%,transparent)] to-transparent" />
+				<div className="h-px w-full bg-gradient-to-r from-transparent via-[color-mix(in_oklch,var(--brand)_40%,transparent)] to-transparent" />
 				<p className="text-xs text-muted-foreground">
 					© {year} Horton Software LLC. All rights reserved.
 				</p>
