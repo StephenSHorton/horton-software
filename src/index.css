@@ -59,7 +59,8 @@
 
 :root,
 .dark {
-	--radius: 0.875rem;
+	/* Toru-style square chrome (no soft pills) */
+	--radius: 0;
 
 	/* Brand blue (original Horton pick) */
 	--brand: oklch(0.72 0.14 250);
@@ -336,7 +337,7 @@
 .badge-pulse-dot {
 	width: 0.4rem;
 	height: 0.4rem;
-	border-radius: 50%;
+	border-radius: 0;
 	background: var(--brand);
 	box-shadow: 0 0 10px var(--brand);
 	animation: pulse-glow 4s ease-in-out infinite;
@@ -362,9 +363,14 @@
 	height: 2.25rem;
 	align-items: center;
 	justify-content: center;
-	border-radius: 0.75rem;
+	border-radius: 0;
 	color: var(--brand-bright);
 	background: color-mix(in oklch, var(--brand) 16%, transparent);
 	border: 1px solid color-mix(in oklch, var(--brand) 32%, transparent);
 	box-shadow: 0 0 12px color-mix(in oklch, var(--brand) 18%, transparent);
+}
+
+/* Squared focus ring (matches Toru's hard geometry) */
+:focus-visible {
+	border-radius: 0;
 }

@@ -74,7 +74,7 @@ function HomePage() {
 			{/* Hero */}
 			<section className="mx-auto max-w-5xl px-4 pb-16 pt-16 sm:px-6 sm:pb-24 sm:pt-20">
 				<div className="max-w-2xl space-y-6">
-					<div className="glass inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[0.72rem] font-semibold tracking-[0.16em] text-muted-foreground uppercase">
+					<div className="glass inline-flex items-center gap-2 rounded-none px-3 py-1.5 text-[0.72rem] font-semibold tracking-[0.16em] text-muted-foreground uppercase">
 						<span className="badge-pulse-dot" aria-hidden />
 						Horton Software LLC
 					</div>
@@ -92,7 +92,7 @@ function HomePage() {
 					<div className="flex flex-wrap gap-3">
 						<Button
 							size="lg"
-							className="btn-glow rounded-full px-6 font-semibold"
+							className="btn-glow rounded-none px-6 font-semibold"
 							asChild
 						>
 							<a href="#contact">
@@ -103,7 +103,7 @@ function HomePage() {
 						<Button
 							size="lg"
 							variant="outline"
-							className="rounded-full border-white/12 bg-white/5 px-6 font-semibold backdrop-blur-sm hover:bg-white/10"
+							className="rounded-none border-white/12 bg-white/5 px-6 font-semibold backdrop-blur-sm hover:bg-white/10"
 							asChild
 						>
 							<a href="#projects">See projects</a>
@@ -164,7 +164,7 @@ function HomePage() {
 				</div>
 				<div className="grid gap-4 md:grid-cols-3">
 					{focus.map((item) => (
-						<div key={item.title} className="glass space-y-3 rounded-xl p-5">
+						<div key={item.title} className="glass space-y-3 rounded-none p-5">
 							<div className="icon-chip">
 								<item.icon className="size-4" />
 							</div>
@@ -180,7 +180,7 @@ function HomePage() {
 			{/* About */}
 			<section id="about" className="relative">
 				<div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-					<div className="glass-strong grid gap-10 rounded-2xl p-6 sm:p-8 md:grid-cols-[1fr_1.2fr] md:items-start">
+					<div className="glass-strong grid gap-10 rounded-none p-6 sm:p-8 md:grid-cols-[1fr_1.2fr] md:items-start">
 						<div className="space-y-2">
 							<h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
 								About
@@ -230,7 +230,7 @@ function HomePage() {
 					<CardContent className="flex flex-wrap gap-3 px-6 pb-8 sm:px-8">
 						<Button
 							size="lg"
-							className="btn-glow rounded-full px-6 font-semibold"
+							className="btn-glow rounded-none px-6 font-semibold"
 							asChild
 						>
 							<a href="mailto:4stephenhorton@gmail.com">
@@ -241,7 +241,7 @@ function HomePage() {
 						<Button
 							size="lg"
 							variant="outline"
-							className="rounded-full border-white/12 bg-white/5 px-6 font-semibold backdrop-blur-sm hover:bg-white/10"
+							className="rounded-none border-white/12 bg-white/5 px-6 font-semibold backdrop-blur-sm hover:bg-white/10"
 							asChild
 						>
 							<a

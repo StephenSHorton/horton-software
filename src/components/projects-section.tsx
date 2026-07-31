@@ -30,7 +30,7 @@ export function ProjectsSection() {
 					</div>
 					<Button
 						variant="outline"
-						className="w-fit shrink-0 rounded-full border-white/12 bg-white/5 font-semibold backdrop-blur-sm hover:bg-white/10"
+						className="w-fit shrink-0 rounded-none border-white/12 bg-white/5 font-semibold backdrop-blur-sm hover:bg-white/10"
 						asChild
 					>
 						<a
@@ -62,7 +62,7 @@ export function ProjectsSection() {
 												href={project.href ?? project.repo}
 												target="_blank"
 												rel="noreferrer"
-												className="icon-chip size-8 shrink-0 rounded-lg transition-transform group-hover:scale-105"
+												className="icon-chip size-8 shrink-0 rounded-none transition-transform group-hover:scale-105"
 												aria-label={`Open ${project.name}`}
 											>
 												<ArrowUpRight className="size-3.5" />
@@ -82,7 +82,7 @@ export function ProjectsSection() {
 									<Badge
 										key={tag}
 										variant="outline"
-										className="rounded-full border-white/10 bg-white/5 font-normal text-muted-foreground"
+										className="rounded-none border-white/10 bg-white/5 font-normal text-muted-foreground"
 									>
 										{tag}
 									</Badge>
@@ -124,7 +124,7 @@ export function ProjectsSection() {
 										href={project.href ?? project.repo}
 										target="_blank"
 										rel="noreferrer"
-										className="glass flex items-center gap-3 rounded-xl px-3 py-3 transition-colors hover:bg-white/5"
+										className="glass flex items-center gap-3 rounded-none px-3 py-3 transition-colors hover:bg-white/5"
 									>
 										<ProjectIcon
 											name={project.name}

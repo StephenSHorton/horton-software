@@ -19,7 +19,7 @@ export function SiteHeader() {
 					href="#top"
 					className="flex items-center gap-2.5 font-semibold tracking-tight"
 				>
-					<span className="flex size-7 items-center justify-center rounded-lg bg-gradient-to-b from-[oklch(0.8_0.12_245)] to-[oklch(0.55_0.14_255)] text-xs font-bold text-primary-foreground shadow-[0_0_16px_color-mix(in_oklch,var(--brand)_50%,transparent)]">
+					<span className="flex size-7 items-center justify-center rounded-none bg-gradient-to-b from-[oklch(0.8_0.12_245)] to-[oklch(0.55_0.14_255)] text-xs font-bold text-primary-foreground shadow-[0_0_16px_color-mix(in_oklch,var(--brand)_50%,transparent)]">
 						HS
 					</span>
 					<span className="hidden sm:inline">Horton Software</span>
@@ -33,7 +33,7 @@ export function SiteHeader() {
 						<a
 							key={item.href}
 							href={item.href}
-							className="rounded-full px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground"
+							className="rounded-none px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground"
 						>
 							{item.label}
 						</a>
@@ -44,7 +44,7 @@ export function SiteHeader() {
 					<Button
 						variant="ghost"
 						size="icon-sm"
-						className="rounded-full text-muted-foreground hover:text-foreground"
+						className="rounded-none text-muted-foreground hover:text-foreground"
 						asChild
 					>
 						<a
@@ -58,7 +58,7 @@ export function SiteHeader() {
 					</Button>
 					<Button
 						size="sm"
-						className="btn-glow rounded-full font-semibold"
+						className="btn-glow rounded-none font-semibold"
 						asChild
 					>
 						<a href="#contact">Get in touch</a>

@@ -28,12 +28,7 @@ export function ProjectIcon({
 			: Layers;
 		return (
 			<span
-				className={cn(
-					"icon-chip shrink-0",
-					dim,
-					size === "sm" && "rounded-lg",
-					className,
-				)}
+				className={cn("icon-chip shrink-0 rounded-none", dim, className)}
 				aria-hidden
 			>
 				<Fallback className={iconDim} />
@@ -44,7 +39,7 @@ export function ProjectIcon({
 	return (
 		<span
 			className={cn(
-				"flex shrink-0 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-black/30 shadow-[0_0_12px_color-mix(in_oklch,var(--brand)_12%,transparent)]",
+				"flex shrink-0 items-center justify-center overflow-hidden rounded-none border border-white/10 bg-black/30 shadow-[0_0_12px_color-mix(in_oklch,var(--brand)_12%,transparent)]",
 				dim,
 				className,
 			)}
