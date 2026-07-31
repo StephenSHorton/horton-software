@@ -9,7 +9,6 @@ import {
 	Server,
 	Sparkles,
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -72,27 +71,40 @@ function HomePage() {
 	return (
 		<div id="top">
 			{/* Hero */}
-			<section className="mx-auto max-w-5xl px-4 pb-16 pt-16 sm:px-6 sm:pb-24 sm:pt-24">
+			<section className="mx-auto max-w-5xl px-4 pb-16 pt-16 sm:px-6 sm:pb-24 sm:pt-20">
 				<div className="max-w-2xl space-y-6">
-					<Badge variant="secondary" className="font-normal">
+					<div className="glass inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[0.72rem] font-semibold tracking-[0.16em] text-muted-foreground uppercase">
+						<span className="badge-pulse-dot" aria-hidden />
 						Horton Software LLC
-					</Badge>
-					<h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
-						Software for builders who ship.
+					</div>
+					<h1 className="text-balance text-4xl font-semibold tracking-[-0.03em] sm:text-5xl">
+						Software for{" "}
+						<span className="text-accent-gradient">builders who ship</span>.
 					</h1>
 					<p className="text-pretty text-lg text-muted-foreground sm:text-xl">
-						Independent software company based in Utah. We design and build
-						products, platforms, and AI-assisted tools — with a bias toward
-						clarity, speed, and systems that compound.
+						Independent software company based in Utah. We design and build{" "}
+						<strong className="font-semibold text-foreground">
+							products, platforms, and AI-assisted tools
+						</strong>{" "}
+						— with a bias toward clarity, speed, and systems that compound.
 					</p>
 					<div className="flex flex-wrap gap-3">
-						<Button size="lg" asChild>
+						<Button
+							size="lg"
+							className="btn-glow rounded-full px-6 font-semibold"
+							asChild
+						>
 							<a href="#contact">
 								<Mail />
 								Contact
 							</a>
 						</Button>
-						<Button size="lg" variant="outline" asChild>
+						<Button
+							size="lg"
+							variant="outline"
+							className="rounded-full border-white/12 bg-white/5 px-6 font-semibold backdrop-blur-sm hover:bg-white/10"
+							asChild
+						>
 							<a
 								href="https://github.com/StephenSHorton"
 								target="_blank"
@@ -106,7 +118,7 @@ function HomePage() {
 			</section>
 
 			{/* Services */}
-			<section id="services" className="border-t border-border/60 bg-card/30">
+			<section id="services" className="relative">
 				<div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
 					<div className="mb-10 max-w-xl space-y-2">
 						<h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
@@ -119,13 +131,18 @@ function HomePage() {
 					</div>
 					<div className="grid gap-4 sm:grid-cols-2">
 						{services.map((item) => (
-							<Card key={item.title} className="bg-card/80">
-								<CardHeader>
-									<div className="mb-1 flex size-9 items-center justify-center rounded-lg bg-primary/15 text-primary">
+							<Card
+								key={item.title}
+								className="glass gap-4 border-0 py-5 shadow-none"
+							>
+								<CardHeader className="gap-3">
+									<div className="icon-chip">
 										<item.icon className="size-4" />
 									</div>
-									<CardTitle className="text-base">{item.title}</CardTitle>
-									<CardDescription className="text-sm leading-relaxed">
+									<CardTitle className="text-base tracking-tight">
+										{item.title}
+									</CardTitle>
+									<CardDescription className="text-sm leading-relaxed text-muted-foreground">
 										{item.description}
 									</CardDescription>
 								</CardHeader>
@@ -148,10 +165,10 @@ function HomePage() {
 						Principles that show up in every engagement and side project.
 					</p>
 				</div>
-				<div className="grid gap-6 md:grid-cols-3">
+				<div className="grid gap-4 md:grid-cols-3">
 					{focus.map((item) => (
-						<div key={item.title} className="space-y-3">
-							<div className="flex size-9 items-center justify-center rounded-lg border border-border/80 bg-background text-primary">
+						<div key={item.title} className="glass space-y-3 rounded-xl p-5">
+							<div className="icon-chip">
 								<item.icon className="size-4" />
 							</div>
 							<h3 className="font-semibold tracking-tight">{item.title}</h3>
@@ -164,9 +181,9 @@ function HomePage() {
 			</section>
 
 			{/* About */}
-			<section id="about" className="border-t border-border/60 bg-card/30">
+			<section id="about" className="relative">
 				<div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-					<div className="grid gap-10 md:grid-cols-[1fr_1.2fr] md:items-start">
+					<div className="glass-strong grid gap-10 rounded-2xl p-6 sm:p-8 md:grid-cols-[1fr_1.2fr] md:items-start">
 						<div className="space-y-2">
 							<h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
 								About
@@ -203,24 +220,33 @@ function HomePage() {
 				id="contact"
 				className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24"
 			>
-				<Card className="overflow-hidden border-primary/20 bg-gradient-to-br from-card via-card to-primary/10">
-					<CardHeader className="gap-3 sm:px-8 sm:pt-8">
+				<Card className="glass-strong gap-4 overflow-hidden border-0 py-0 shadow-none">
+					<CardHeader className="gap-3 px-6 pt-8 sm:px-8">
 						<CardTitle className="text-2xl tracking-tight sm:text-3xl">
-							Let&apos;s talk
+							Let&apos;s <span className="text-accent-gradient">talk</span>
 						</CardTitle>
-						<CardDescription className="max-w-lg text-base">
+						<CardDescription className="max-w-lg text-base text-muted-foreground">
 							Have a product idea, tooling problem, or agentic workflow to
 							build? Reach out — short notes welcome.
 						</CardDescription>
 					</CardHeader>
-					<CardContent className="flex flex-wrap gap-3 sm:px-8 sm:pb-8">
-						<Button size="lg" asChild>
+					<CardContent className="flex flex-wrap gap-3 px-6 pb-8 sm:px-8">
+						<Button
+							size="lg"
+							className="btn-glow rounded-full px-6 font-semibold"
+							asChild
+						>
 							<a href="mailto:4stephenhorton@gmail.com">
 								<Mail />
 								4stephenhorton@gmail.com
 							</a>
 						</Button>
-						<Button size="lg" variant="outline" asChild>
+						<Button
+							size="lg"
+							variant="outline"
+							className="rounded-full border-white/12 bg-white/5 px-6 font-semibold backdrop-blur-sm hover:bg-white/10"
+							asChild
+						>
 							<a
 								href="https://github.com/StephenSHorton"
 								target="_blank"

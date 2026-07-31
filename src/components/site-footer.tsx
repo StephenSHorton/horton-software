@@ -1,11 +1,9 @@
-import { Separator } from "@/components/ui/separator";
-
 export function SiteFooter() {
 	const year = new Date().getFullYear();
 
 	return (
-		<footer className="mt-auto border-t border-border/60">
-			<div className="mx-auto flex max-w-5xl flex-col gap-4 px-4 py-8 sm:px-6">
+		<footer className="relative z-[1] mt-auto border-t border-white/8">
+			<div className="mx-auto flex max-w-5xl flex-col gap-5 px-4 py-10 sm:px-6">
 				<div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
 					<div>
 						<p className="font-semibold tracking-tight">Horton Software LLC</p>
@@ -13,9 +11,9 @@ export function SiteFooter() {
 							Saratoga Springs, Utah
 						</p>
 					</div>
-					<div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+					<div className="flex flex-wrap gap-5 text-sm">
 						<a
-							className="hover:text-foreground"
+							className="text-muted-foreground transition-colors hover:text-[#a8d4f5]"
 							href="https://github.com/StephenSHorton"
 							target="_blank"
 							rel="noreferrer"
@@ -23,14 +21,22 @@ export function SiteFooter() {
 							GitHub
 						</a>
 						<a
-							className="hover:text-foreground"
+							className="text-muted-foreground transition-colors hover:text-[#a8d4f5]"
 							href="mailto:4stephenhorton@gmail.com"
 						>
 							Email
 						</a>
+						<a
+							className="text-muted-foreground transition-colors hover:text-[#a8d4f5]"
+							href="https://stephenshorton.github.io/chrome-ref-drop/"
+							target="_blank"
+							rel="noreferrer"
+						>
+							Chrome Reference Drop
+						</a>
 					</div>
 				</div>
-				<Separator />
+				<div className="h-px w-full bg-gradient-to-r from-transparent via-[color-mix(in_srgb,var(--orange)_35%,transparent)] to-transparent" />
 				<p className="text-xs text-muted-foreground">
 					© {year} Horton Software LLC. All rights reserved.
 				</p>

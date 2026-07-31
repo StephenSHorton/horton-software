@@ -10,24 +10,31 @@ const nav = [
 
 export function SiteHeader() {
 	return (
-		<header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
-			<div className="mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-4 sm:px-6">
+		<header className="sticky top-0 z-50 border-b border-white/8 bg-background/55 backdrop-blur-xl">
+			<div
+				className="lightbar absolute inset-x-0 bottom-0 opacity-80"
+				aria-hidden
+			/>
+			<div className="relative mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-4 sm:px-6">
 				<a
 					href="#top"
-					className="flex items-center gap-2 font-semibold tracking-tight"
+					className="flex items-center gap-2.5 font-semibold tracking-tight"
 				>
-					<span className="flex size-7 items-center justify-center rounded-md bg-primary text-xs font-bold text-primary-foreground">
+					<span className="flex size-7 items-center justify-center rounded-lg bg-gradient-to-b from-[#ff8f1f] to-[#ea7600] text-xs font-bold text-primary-foreground shadow-[0_0_16px_color-mix(in_srgb,var(--orange)_45%,transparent)]">
 						HS
 					</span>
 					<span className="hidden sm:inline">Horton Software</span>
 				</a>
 
-				<nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
+				<nav
+					className="hidden items-center gap-0.5 md:flex"
+					aria-label="Primary"
+				>
 					{nav.map((item) => (
 						<a
 							key={item.href}
 							href={item.href}
-							className="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+							className="rounded-full px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground"
 						>
 							{item.label}
 						</a>
@@ -35,7 +42,12 @@ export function SiteHeader() {
 				</nav>
 
 				<div className="flex items-center gap-2">
-					<Button variant="ghost" size="icon-sm" asChild>
+					<Button
+						variant="ghost"
+						size="icon-sm"
+						className="rounded-full text-muted-foreground hover:text-foreground"
+						asChild
+					>
 						<a
 							href="https://github.com/StephenSHorton"
 							target="_blank"
@@ -45,7 +57,11 @@ export function SiteHeader() {
 							<Github />
 						</a>
 					</Button>
-					<Button size="sm" asChild>
+					<Button
+						size="sm"
+						className="btn-glow rounded-full font-semibold"
+						asChild
+					>
 						<a href="#contact">Get in touch</a>
 					</Button>
 				</div>
