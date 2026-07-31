@@ -23,16 +23,6 @@ export const projects: Project[] = [
 		featured: true,
 	},
 	{
-		name: "s&box MCP",
-		tagline: "AI in the game editor",
-		description:
-			"Model Context Protocol server for the s&box editor — scene manipulation, code execution, and automation for coding agents.",
-		tags: ["C#", "Games", "MCP"],
-		repo: "https://github.com/StephenSHorton/sbox-mcp",
-		icon: "/project-icons/sbox-mcp.png",
-		featured: true,
-	},
-	{
 		name: "WC3 Forge",
 		tagline: "Agent-driven map editor",
 		description:
@@ -61,7 +51,7 @@ export const projects: Project[] = [
 			"Fast peer-to-peer file transfer over iroh — free, local-first, and nicer than the usual sendme-style CLI.",
 		tags: ["Rust", "P2P", "iroh"],
 		repo: "https://github.com/StephenSHorton/hato",
-		icon: "/project-icons/hato.svg",
+		icon: "/project-icons/hato.png",
 		featured: true,
 	},
 	{

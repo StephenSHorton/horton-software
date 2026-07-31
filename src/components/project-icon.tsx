@@ -21,9 +21,7 @@ export function ProjectIcon({
 	const iconDim = size === "sm" ? "size-4" : "size-5";
 
 	if (!src || failed) {
-		const Fallback = /game|spire|forge|multiplayer|s&box|annihilation/i.test(
-			name,
-		)
+		const Fallback = /game|spire|forge|multiplayer|annihilation/i.test(name)
 			? Gamepad2
 			: Layers;
 		return (
