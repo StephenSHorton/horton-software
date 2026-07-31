@@ -9,6 +9,7 @@ import {
 	Server,
 	Sparkles,
 } from "lucide-react";
+import { ProjectsSection } from "@/components/projects-section";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -105,17 +106,13 @@ function HomePage() {
 							className="rounded-full border-white/12 bg-white/5 px-6 font-semibold backdrop-blur-sm hover:bg-white/10"
 							asChild
 						>
-							<a
-								href="https://github.com/StephenSHorton"
-								target="_blank"
-								rel="noreferrer"
-							>
-								View work on GitHub
-							</a>
+							<a href="#projects">See projects</a>
 						</Button>
 					</div>
 				</div>
 			</section>
+
+			<ProjectsSection />
 
 			{/* Services */}
 			<section id="services" className="relative">

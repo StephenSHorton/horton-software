@@ -150,6 +150,8 @@
 	body {
 		@apply bg-background text-foreground antialiased;
 		font-family: var(--font-sans);
+		/* clip doesn't break sticky the way overflow-x: hidden does */
+		overflow-x: clip;
 	}
 	::selection {
 		background: color-mix(in oklch, var(--brand) 45%, transparent);

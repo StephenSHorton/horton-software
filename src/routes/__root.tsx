@@ -4,11 +4,11 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 const RootLayout = () => (
-	<div className="relative flex min-h-dvh flex-col overflow-x-hidden">
+	// Avoid overflow-x-hidden here — it breaks position: sticky in most browsers.
+	<div className="relative flex min-h-dvh flex-col">
 		<AmbientStage />
-		<div className="lightbar" aria-hidden />
 		<SiteHeader />
-		<main className="relative z-[1] flex-1">
+		<main className="relative z-[1] min-w-0 flex-1">
 			<Outlet />
 		</main>
 		<SiteFooter />

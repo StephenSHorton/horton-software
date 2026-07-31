@@ -2,6 +2,7 @@ import { Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const nav = [
+	{ href: "#projects", label: "Projects" },
 	{ href: "#services", label: "Services" },
 	{ href: "#focus", label: "Focus" },
 	{ href: "#about", label: "About" },
@@ -10,12 +11,10 @@ const nav = [
 
 export function SiteHeader() {
 	return (
-		<header className="sticky top-0 z-50 border-b border-white/8 bg-background/55 backdrop-blur-xl">
-			<div
-				className="lightbar absolute inset-x-0 bottom-0 opacity-80"
-				aria-hidden
-			/>
-			<div className="relative mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-4 sm:px-6">
+		<header className="sticky top-0 z-50 border-b border-white/8 bg-background/70 backdrop-blur-xl supports-[backdrop-filter]:bg-background/55">
+			{/* Single lightbar — top of sticky nav only */}
+			<div className="lightbar" aria-hidden />
+			<div className="mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-4 sm:px-6">
 				<a
 					href="#top"
 					className="flex items-center gap-2.5 font-semibold tracking-tight"
