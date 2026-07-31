@@ -46,7 +46,7 @@ const services = [
 		icon: Gamepad2,
 		title: "Games & interactive",
 		description:
-			"Game tools, Roblox/TypeScript, 3D web, and experimental builds where systems meet play.",
+			"Game tooling, mods, multiplayer systems, and 3D/web experiments — from editor automation to in-engine play.",
 	},
 ] as const;
 

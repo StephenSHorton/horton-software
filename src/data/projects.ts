@@ -5,6 +5,8 @@ export type Project = {
 	tags: string[];
 	repo: string;
 	href?: string;
+	/** Path under public/, e.g. /project-icons/toru.png */
+	icon?: string;
 	featured?: boolean;
 };
 
@@ -15,8 +17,9 @@ export const projects: Project[] = [
 		tagline: "Real-time co-op on Dolphin",
 		description:
 			"Live visual multiplayer for The Legend of Zelda: The Wind Waker — Go TUI, TCP networking, and PowerPC code injection.",
-		tags: ["Go", "Emulation", "Networking"],
+		tags: ["Go", "Games", "Emulation"],
 		repo: "https://github.com/StephenSHorton/ww-multiplayer",
+		icon: "/project-icons/ww-multiplayer.png",
 		featured: true,
 	},
 	{
@@ -24,8 +27,9 @@ export const projects: Project[] = [
 		tagline: "AI in the game editor",
 		description:
 			"Model Context Protocol server for the s&box editor — scene manipulation, code execution, and automation for coding agents.",
-		tags: ["C#", "MCP", "Game tools"],
+		tags: ["C#", "Games", "MCP"],
 		repo: "https://github.com/StephenSHorton/sbox-mcp",
+		icon: "/project-icons/sbox-mcp.png",
 		featured: true,
 	},
 	{
@@ -33,9 +37,10 @@ export const projects: Project[] = [
 		tagline: "Agent-driven map editor",
 		description:
 			"Warcraft III map editor designed to be driven by Claude as much as by hand — Go + Svelte in a single Wails binary with embedded MCP.",
-		tags: ["Go", "Wails", "MCP"],
+		tags: ["Go", "Games", "MCP"],
 		repo: "https://github.com/StephenSHorton/wc3-forge",
 		href: "https://stephenshorton.github.io/wc3-forge/",
+		icon: "/project-icons/wc3-forge.png",
 		featured: true,
 	},
 	{
@@ -46,6 +51,7 @@ export const projects: Project[] = [
 		tags: ["Python", "Blender", "Tooling"],
 		repo: "https://github.com/StephenSHorton/chrome-ref-drop",
 		href: "https://stephenshorton.github.io/chrome-ref-drop/",
+		icon: "/project-icons/chrome-ref-drop.svg",
 		featured: true,
 	},
 	{
@@ -55,6 +61,7 @@ export const projects: Project[] = [
 			"Fast peer-to-peer file transfer over iroh — free, local-first, and nicer than the usual sendme-style CLI.",
 		tags: ["Rust", "P2P", "iroh"],
 		repo: "https://github.com/StephenSHorton/hato",
+		icon: "/project-icons/hato.svg",
 		featured: true,
 	},
 	{
@@ -65,6 +72,7 @@ export const projects: Project[] = [
 		tags: ["Go", "Wails", "Desktop"],
 		repo: "https://github.com/StephenSHorton/toru",
 		href: "https://stephenshorton.github.io/toru/",
+		icon: "/project-icons/toru.png",
 		featured: true,
 	},
 	{
@@ -75,6 +83,7 @@ export const projects: Project[] = [
 		tags: ["TypeScript", "MCP", "Desktop"],
 		repo: "https://github.com/StephenSHorton/aizuchi",
 		href: "https://aizuchi.tools",
+		icon: "/project-icons/aizuchi.png",
 	},
 	{
 		name: "Kussetsu",
@@ -92,31 +101,22 @@ export const projects: Project[] = [
 			"Wine bottle manager for macOS, built to be driven by Claude Code — Go + Svelte Wails app with embedded MCP.",
 		tags: ["Go", "macOS", "MCP"],
 		repo: "https://github.com/StephenSHorton/mead",
-	},
-	{
-		name: "Navigate",
-		tagline: "Pathfinding for roblox-ts",
-		description:
-			"Composable TypeScript-native pathfinding suite for roblox-ts projects.",
-		tags: ["TypeScript", "Roblox", "npm"],
-		repo: "https://github.com/StephenSHorton/navigate",
-		href: "https://www.npmjs.com/package/@rbxts/navigate",
-	},
-	{
-		name: "Immersive Portals",
-		tagline: "Portal rendering for roblox-ts",
-		description:
-			"TypeScript-native immersive portal rendering library for roblox-ts.",
-		tags: ["TypeScript", "Roblox", "Graphics"],
-		repo: "https://github.com/StephenSHorton/immersive-portals",
-		href: "https://www.npmjs.com/package/@rbxts/immersive-portals",
+		icon: "/project-icons/mead.png",
 	},
 	{
 		name: "尖塔工房 (Sentou Koubou)",
 		tagline: "Slay the Spire 2 mods",
 		description:
 			"Monorepo for Slay the Spire 2 mods — characters, content, and tooling.",
-		tags: ["C#", "Game mods"],
+		tags: ["C#", "Games", "Mods"],
 		repo: "https://github.com/StephenSHorton/sentou-koubou",
+	},
+	{
+		name: "BAR Annihilation",
+		tagline: "RTS control for PA: Titans",
+		description:
+			"Beyond All Reason–style unit control for Planetary Annihilation: TITANS — smart selection, grid build, area commands, formations.",
+		tags: ["Games", "RTS", "Mods"],
+		repo: "https://github.com/StephenSHorton/bar-annihilation",
 	},
 ];

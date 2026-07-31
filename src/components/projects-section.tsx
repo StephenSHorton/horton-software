@@ -1,4 +1,5 @@
 import { ArrowUpRight, Github } from "lucide-react";
+import { ProjectIcon } from "@/components/project-icon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -23,8 +24,8 @@ export function ProjectsSection() {
 							Projects
 						</h2>
 						<p className="text-muted-foreground">
-							Selected public work — tools, game systems, and agent-native apps
-							shipping under Horton Software.
+							Selected public work — developer tools, game systems, and
+							agent-native apps shipping under Horton Software.
 						</p>
 					</div>
 					<Button
@@ -50,24 +51,27 @@ export function ProjectsSection() {
 							className="glass group flex flex-col gap-0 border-0 py-0 shadow-none transition-[box-shadow,border-color] hover:shadow-[0_0_0_1px_color-mix(in_oklch,var(--brand)_35%,transparent)]"
 						>
 							<CardHeader className="gap-3 px-5 pt-5 pb-3">
-								<div className="flex items-start justify-between gap-3">
-									<div className="space-y-1">
-										<CardTitle className="text-base tracking-tight">
-											{project.name}
-										</CardTitle>
+								<div className="flex items-start gap-3">
+									<ProjectIcon name={project.name} src={project.icon} />
+									<div className="min-w-0 flex-1 space-y-1">
+										<div className="flex items-start justify-between gap-2">
+											<CardTitle className="text-base tracking-tight">
+												{project.name}
+											</CardTitle>
+											<a
+												href={project.href ?? project.repo}
+												target="_blank"
+												rel="noreferrer"
+												className="icon-chip size-8 shrink-0 rounded-lg transition-transform group-hover:scale-105"
+												aria-label={`Open ${project.name}`}
+											>
+												<ArrowUpRight className="size-3.5" />
+											</a>
+										</div>
 										<p className="text-sm font-medium text-brand-bright">
 											{project.tagline}
 										</p>
 									</div>
-									<a
-										href={project.href ?? project.repo}
-										target="_blank"
-										rel="noreferrer"
-										className="icon-chip shrink-0 transition-transform group-hover:scale-105"
-										aria-label={`Open ${project.name}`}
-									>
-										<ArrowUpRight className="size-4" />
-									</a>
 								</div>
 								<CardDescription className="text-sm leading-relaxed text-muted-foreground">
 									{project.description}
@@ -120,9 +124,14 @@ export function ProjectsSection() {
 										href={project.href ?? project.repo}
 										target="_blank"
 										rel="noreferrer"
-										className="glass flex items-center justify-between gap-3 rounded-xl px-4 py-3 transition-colors hover:bg-white/5"
+										className="glass flex items-center gap-3 rounded-xl px-3 py-3 transition-colors hover:bg-white/5"
 									>
-										<div className="min-w-0">
+										<ProjectIcon
+											name={project.name}
+											src={project.icon}
+											size="sm"
+										/>
+										<div className="min-w-0 flex-1">
 											<p className="truncate font-medium tracking-tight">
 												{project.name}
 											</p>
