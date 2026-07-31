@@ -7,9 +7,9 @@ import { defineConfig } from "vite";
 
 const rootDir = path.dirname(fileURLToPath(import.meta.url));
 
-// GitHub project pages: https://stephenshorton.github.io/horton-software/
-// Override with VITE_BASE=/ for local root or a custom domain.
-const base = process.env.VITE_BASE ?? "/horton-software/";
+// Apex/custom domain (hortonsoftware.com) serves at site root.
+// Project-pages path still works if you set VITE_BASE=/horton-software/ in CI.
+const base = process.env.VITE_BASE ?? "/";
 
 // https://vite.dev/config/
 export default defineConfig({

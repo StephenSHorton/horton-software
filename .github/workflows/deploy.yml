@@ -31,7 +31,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_BASE: /horton-software/
+          # Apex custom domain serves at /
+          VITE_BASE: /
 
       # SPA fallback for client-side routes on GitHub Pages
       - name: SPA 404 fallback

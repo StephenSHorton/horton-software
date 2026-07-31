@@ -12,32 +12,36 @@ Company site for [Horton Software LLC](https://stephenshorton.github.io/horton-s
 | UI | shadcn (New York) + Tailwind 4 |
 | Routing | TanStack Router |
 | Lint | Biome |
-| Host | GitHub Pages (`/horton-software/`) |
+| Host | GitHub Pages + custom domain |
+
+## Domain
+
+- **Primary:** https://hortonsoftware.com
+- **Registrar:** Squarespace Domains
+- **CNAME file:** `public/CNAME` → `hortonsoftware.com`
+
+### Squarespace DNS (custom records)
+
+| Type | Host | Data |
+| --- | --- | --- |
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `stephenshorton.github.io` |
+
+Remove or override Squarespace parking defaults for `@` / `www` so they don’t conflict.
 
 ## Commands
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173/horton-software/
+npm run dev      # http://localhost:5173/
 npm run build
 npm run preview
 npm run lint
 ```
 
-Local root URL (no base path):
-
-```bash
-# PowerShell
-$env:VITE_BASE="/"; npm run dev
-```
-
 ## Deploy
 
-Push to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
-
-One-time repo setup (GitHub → Settings → Pages):
-
-1. **Source:** GitHub Actions
-2. After first green deploy: site at `https://stephenshorton.github.io/horton-software/`
-
-Custom domain later: set DNS + Pages custom domain, then build with `VITE_BASE=/`.
+Push to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) with `VITE_BASE=/`.
