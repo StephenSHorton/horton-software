@@ -27,6 +27,13 @@ function useAdaptiveNav(
 		const menu = menuRef.current;
 		if (!header || !inner || !menu) return;
 
+		// Without the Popover API the list simply stays inline.
+		if (!("popover" in HTMLElement.prototype)) {
+			menu.removeAttribute("popover");
+			header.classList.add("is-wide");
+			return;
+		}
+
 		let lastWidth = 0;
 		const measure = () => {
 			const width = header.clientWidth;
@@ -107,7 +114,8 @@ export function SiteHeader() {
 
 	const closeMenu = () => {
 		const menu = menuRef.current;
-		if (menu?.hasAttribute("popover") && menu.matches(":popover-open")) {
+		if (!menu?.hasAttribute("popover") || !("hidePopover" in menu)) return;
+		if (menu.matches(":popover-open")) {
 			menu.hidePopover();
 		}
 	};

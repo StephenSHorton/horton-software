@@ -439,7 +439,7 @@ section[id]:focus {
 	overflow: auto;
 	list-style: none;
 	color: var(--foreground);
-	background: oklch(0.14 0.03 255 / 96%);
+	background: oklch(0.14 0.03 255);
 	border: 1px solid color-mix(in oklch, var(--brand) 35%, transparent);
 	box-shadow: 0 18px 48px oklch(0 0 0 / 55%);
 }
@@ -545,7 +545,8 @@ section[id]:focus {
 		.reveal {
 			animation: rise-in auto linear backwards;
 			animation-timeline: view();
-			animation-range: entry 0% entry 70%;
+			/* A fixed distance, so blocks taller than the screen finish fading in early */
+			animation-range: entry 0 entry 10rem;
 		}
 	}
 }

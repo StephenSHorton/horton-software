@@ -137,8 +137,8 @@ export function FeaturedSection() {
 		<section id="work" tabIndex={-1} className="relative">
 			<div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
 				<SectionHeading index="01" label="Work" title="What we're shipping">
-					{featured.length} open-source projects, each with its own app. The
-					titles link to the product pages.
+					{featured.length} open-source projects, each with its own app. Each
+					title links to its product page or source.
 				</SectionHeading>
 				<div className="grid gap-4 md:grid-cols-2">
 					{featured.map((project) => (
@@ -165,7 +165,7 @@ export function ProjectsSection() {
 				<SectionHeading
 					index="02"
 					label="Projects"
-					title="Everything else that's public"
+					title="More public work"
 					action={
 						<Button
 							variant="outline"

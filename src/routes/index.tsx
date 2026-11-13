@@ -76,7 +76,7 @@ const platforms = new Set(
 );
 
 const stats = [
-	{ value: projects.length, label: "public projects" },
+	{ value: projects.length, label: "public projects here" },
 	{ value: languages.length, label: "languages in use" },
 	{ value: platforms.size, label: "platforms shipped to" },
 ] as const;
