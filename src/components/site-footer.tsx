@@ -3,7 +3,7 @@ export function SiteFooter() {
 
 	return (
 		<footer className="relative z-[1] mt-auto border-t border-white/8">
-			<div className="mx-auto flex max-w-5xl flex-col gap-5 px-4 py-10 sm:px-6">
+			<div className="mx-auto flex max-w-6xl flex-col gap-5 px-4 py-10 sm:px-6">
 				<div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
 					<div>
 						<p className="font-semibold tracking-tight">Horton Software LLC</p>
@@ -28,11 +28,11 @@ export function SiteFooter() {
 						</a>
 						<a
 							className="text-muted-foreground transition-colors hover:text-[#a8d4f5]"
-							href="https://stephenshorton.github.io/chrome-ref-drop/"
+							href="https://www.linkedin.com/in/stephenshorton/"
 							target="_blank"
 							rel="noreferrer"
 						>
-							Chrome Reference Drop
+							LinkedIn
 						</a>
 					</div>
 				</div>

@@ -1,35 +1,29 @@
-import { Gamepad2, Layers } from "lucide-react";
-import { useState } from "react";
+import { Gamepad2, Layers, Package } from "lucide-react";
+import type { Project } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
 type ProjectIconProps = {
-	name: string;
-	src?: string;
-	className?: string;
-	/** Prefer square tile for featured cards; compact for list rows */
+	project: Project;
+	/** Square tile for featured cards; compact for the smaller cards. */
 	size?: "md" | "sm";
 };
 
-export function ProjectIcon({
-	name,
-	src,
-	className,
-	size = "md",
-}: ProjectIconProps) {
-	const [failed, setFailed] = useState(false);
-	const dim = size === "sm" ? "size-9" : "size-11";
-	const iconDim = size === "sm" ? "size-4" : "size-5";
+const fallbacks = {
+	games: Gamepad2,
+	libraries: Package,
+	agents: Layers,
+	apps: Layers,
+} as const;
 
-	if (!src || failed) {
-		const Fallback = /game|spire|forge|multiplayer|annihilation/i.test(name)
-			? Gamepad2
-			: Layers;
+export function ProjectIcon({ project, size = "md" }: ProjectIconProps) {
+	const dim = size === "sm" ? "size-9" : "size-12";
+	const px = size === "sm" ? 36 : 48;
+
+	if (!project.icon) {
+		const Fallback = fallbacks[project.category];
 		return (
-			<span
-				className={cn("icon-chip shrink-0 rounded-none", dim, className)}
-				aria-hidden
-			>
-				<Fallback className={iconDim} />
+			<span className={cn("icon-chip shrink-0", dim)} aria-hidden>
+				<Fallback className={size === "sm" ? "size-4" : "size-5"} />
 			</span>
 		);
 	}
@@ -37,22 +31,21 @@ export function ProjectIcon({
 	return (
 		<span
 			className={cn(
-				"flex shrink-0 items-center justify-center overflow-hidden rounded-none border border-white/10 bg-black/30 shadow-[0_0_12px_color-mix(in_oklch,var(--brand)_12%,transparent)]",
+				"flex shrink-0 items-center justify-center overflow-hidden border border-white/10 bg-black/30 shadow-[0_0_12px_color-mix(in_oklch,var(--brand)_12%,transparent)]",
 				dim,
-				className,
 			)}
 		>
 			<img
-				src={src}
+				src={project.icon}
 				alt=""
-				width={size === "sm" ? 36 : 44}
-				height={size === "sm" ? 36 : 44}
+				width={px}
+				height={px}
 				className={cn(
 					"size-full",
-					src.endsWith(".svg") ? "object-contain p-1.5" : "object-cover",
+					project.iconPad ? "object-contain p-1.5" : "object-cover",
 				)}
 				loading="lazy"
-				onError={() => setFailed(true)}
+				decoding="async"
 			/>
 		</span>
 	);
